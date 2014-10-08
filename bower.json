@@ -1,0 +1,20 @@
+{
+  "name": "todos",
+  "version": "0.1.0",
+  "description": "todos list case with unit test & e2e test.",
+  "homepage": "https://github.com/oglen/todos",
+  "authors": [
+    "IsaacFang <isaac.fang@grapecity.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.26"
+  }
+}
