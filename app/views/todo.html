@@ -1,0 +1,41 @@
+<div class="option clear">
+    <h2>
+        <a href="#/todos">Back List</a>
+    </h2>
+
+    <h3>
+        <a href="#/todo">New Todo</a>
+    </h3>
+</div>
+<div class="edit">
+    <div class="edit-header clear">
+        <h2>Edit Todo</h2>
+    </div>
+    <div class="edit-body">
+        <form class="edit-form">
+            <ul>
+                <li>
+                    <label for="title">Title</label>
+
+                    <div class="input-wrap">
+                        <input id="title" type="text" ng-model="todo.title"/>
+                    </div>
+                </li>
+                <li>
+                    <label for="detail">Detail</label>
+
+                    <div class="input-wrap">
+                        <textarea id="detail" ng-model="todo.detail"></textarea>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <div class="edit-footer">
+            Create at {{todo.createAt | date:'medium'}}<br/>
+            Update at {{todo.updateAt | date:'medium'}}
+        </div>
+    </div>
+</div>
+
+
+

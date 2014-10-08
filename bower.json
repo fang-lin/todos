@@ -15,6 +15,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.26"
+    "angular": "~1.2.26",
+    "jquery": "~2.1.1",
+    "underscore": "~1.7.0",
+    "requirejs": "~2.1.15",
+    "angular-route": "~1.2.26",
+    "angular-animate": "~1.2.26",
+    "crypto": "~3.24.10",
+    "font-awesome": "~4.2.0"
   }
 }

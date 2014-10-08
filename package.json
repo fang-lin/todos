@@ -1,22 +1,23 @@
 {
-  "name": "todos",
-  "version": "0.1.0",
-  "description": "todos list case with unit test & e2e test.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oglen/todos.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oglen/todos/issues"
-  },
-  "homepage": "https://github.com/oglen/todos",
-  "dependencies": {
-    "http-server": "^0.7.1"
-  }
+    "name": "todos",
+    "version": "0.1.0",
+    "description": "todos list case with unit test & e2e test.",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server -p 8000",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oglen/todos.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/oglen/todos/issues"
+    },
+    "homepage": "https://github.com/oglen/todos",
+    "dependencies": {
+        "http-server": "^0.7.1"
+    }
 }
