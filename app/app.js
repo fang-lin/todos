@@ -26,16 +26,5 @@ define([
                 name + '.directives',
                 name + '.filters',
                 name + '.services'
-        ])
-        .run([
-            '$rootScope',
-            '$location',
-            '$route',
-            '$routeParams',
-            '$log',
-            function ($rootScope, $location, $route, $routeParams, $log) {
-
-
-            }
         ]);
 });
