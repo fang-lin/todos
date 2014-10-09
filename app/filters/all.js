@@ -5,32 +5,18 @@
 
 define([
     'config',
+    'underscore',
     'angular'
-], function (config) {
+], function (config, _) {
     'use strict';
 
     var filter = angular.module(config.name + '.filters', [])
-        .filter('formatSpace', [
+        .filter('count', [
             function () {
-                return function (text) {
-                    //将空字符转换成半角空格（\u2000），用于字符占位，修复UI上的Bug。
-                    if (text == null || text === '') {
-                        return '\u2000';
-                    } else {
-                        return text;
-                    }
-                };
-            }
-        ])
-        .filter('toPercent', [
-            function () {
-                return function (num) {
-                    //将数字转换成百分比形式
-                    if (!isNaN(num)) {
-                        return (num * 100).toFixed(2) + '%';
-                    } else {
-                        return num;
-                    }
+                return function (array, prop, reverse) {
+                    return _.filter(array, function (ele) {
+                        return reverse ? !ele[prop] : ele[prop];
+                    }).length;
                 };
             }
         ]);

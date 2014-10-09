@@ -1,27 +1,25 @@
 <div class="option clear">
     <h2>
-        <a ng-click="doneAll()">Done All</a>
+        <a ng-click="dealAll()">{{allDone?'+ Undone':'- Done'}} All({{todos | count:'key'}})</a>
     </h2>
 
     <h3>
-        <!--<a ng-click="clearAll()">Clear All</a>-->
         <a href="#/todo">New Todo +</a>
     </h3>
 </div>
 <ul class="todos">
-    <li ng-repeat="(key, todo) in todos | orderBy:'createAt':true" class="{{todo.done?'done-todo':''}} scale-fade">
+    <li ng-repeat="todo in todos | orderBy:'createAt':true" class="{{todo.done?'done-todo':''}} scale-fade">
         <div class="todo-header clear">
             <h2>
-                <a ng-click="deal(key)">{{todo.done?'Undone':'Done'}}</a>
-                <span ng-bind="todo.title"></span>
+                <a ng-click="deal(todo.key)">{{todo.done?'+ Undone':'- Done'}}</a><span ng-bind="todo.title"></span>
             </h2>
 
             <h3>
-                <a ng-href="#/todo/{{key}}">Edit</a><a ng-click="remove(key)">Remove</a>
+                <a ng-href="#/todo/{{todo.key}}">Edit</a><a ng-click="remove(todo.key)">Remove</a>
             </h3>
         </div>
         <div class="todo-body scale-fade" ng-hide="todo.done">
-            <span ng-bind="todo.detail"></span>
+            <pre ng-bind="todo.detail"></pre>
 
             <div class="todo-footer">
                 Create at {{todo.createAt | date:'medium'}}<br/>
@@ -30,7 +28,10 @@
         </div>
     </li>
 </ul>
+<div class="option clear">
+    <h2>
+        <a ng-click="clearAllDone()">- Clear All Done({{todos | count:'done'}})</a>
+    </h2>
+</div>
 <div class="todos-footer">
-    <span ng-bind="todos.length"></span>
-    <span ng-bind="todos.length"></span>
 </div>

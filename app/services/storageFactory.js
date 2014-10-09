@@ -41,10 +41,18 @@ define([
             };
 
             Storage.prototype.fetch = function () {
-                var list = {};
+                var list = [];
                 for (var key in localStorage) {
                     if (localStorage.hasOwnProperty(key)) {
-                        list[key] = JSON.parse(localStorage[key]);
+                        var todo = JSON.parse(localStorage[key]);
+                        list.push({
+                            key: key,
+                            title: todo.title,
+                            detail: todo.detail,
+                            done: todo.done,
+                            createAt: todo.createAt,
+                            updateAt: todo.updateAt
+                        });
                     }
                 }
                 return list;

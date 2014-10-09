@@ -23,26 +23,61 @@ define(function () {
             };
 
             $scope.remove = function (key) {
-                delete $scope.todos[key];
-                storage.remove(key);
+                $scope.todos.forEach(function (todo, index) {
+                    if (todo.key === key) {
+                        $scope.todos.splice(index, 1);
+                        storage.remove(key);
+                        return false;
+                    }
+                });
+                $scope.updateAllDone();
             };
 
             $scope.deal = function (key) {
-                var todo = $scope.todos[key];
-                todo.done = !todo.done;
-                storage.set(key, todo);
+                $scope.todos.forEach(function (todo, index) {
+                    if (todo.key === key) {
+                        todo.done = !todo.done;
+                        storage.set(key, todo);
+                        return false;
+                    }
+                });
+                $scope.updateAllDone();
             };
 
-            $scope.doneAll = function () {
-                for (var key in $scope.todos) {
-                    if ($scope.todos.hasOwnProperty(key)) {
-                        var todo = $scope.todos[key];
-                        todo.done = true;
-                        storage.set(key, todo);
+            $scope.dealAll = function () {
+                var allDone = !$scope.allDone;
+
+                $scope.todos.forEach(function (todo, index) {
+                    todo.done = allDone;
+                    storage.set(todo.key, todo);
+                });
+                $scope.updateAllDone();
+            };
+
+            $scope.clearAllDone = function () {
+                for (var index = 0; index < $scope.todos.length; ++index) {
+                    var todo = $scope.todos[index];
+                    if (todo.done) {
+                        $scope.todos.splice(index, 1);
+                        storage.remove(todo.key);
+                        --index;
                     }
                 }
+                $scope.updateAllDone();
+            };
+
+            $scope.updateAllDone = function () {
+                var allDone = true;
+                $scope.todos.forEach(function (todo, index) {
+                    if (!todo.done) {
+                        allDone = false;
+                        return false;
+                    }
+                });
+                $scope.allDone = allDone;
             };
 
             $scope.fetch();
+            $scope.updateAllDone();
         }];
 });

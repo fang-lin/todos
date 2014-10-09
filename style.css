@@ -27,7 +27,6 @@ a {
 
 header {
     padding: 5px 15px;
-    background: #fff;
     color: #006544;
     text-align: center;
 }
@@ -39,6 +38,7 @@ header {
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
+    background: #fff;
 }
 
 footer {
@@ -71,12 +71,8 @@ footer a:hover {
     margin: 0;
 }
 
-.done-todo {
-    /*background: #219161;*/
-}
-
 .todos-footer {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .todo-header,
@@ -90,9 +86,12 @@ footer a:hover {
     user-select: none;
 }
 
-.todo-header,
-.edit-header {
+.todo-header{
     background: #a9debf;
+}
+
+.option {
+    background: #eeeeee;
 }
 
 .todo-footer,
@@ -100,14 +99,8 @@ footer a:hover {
     color: #999999;
 }
 
-.edit-header {
-    padding: 0 15px;
-}
-
 .todo-header h2,
 .todo-header h3,
-.edit-header h2,
-.edit-header h3,
 .option h2,
 .option h3 {
     margin: 0;
@@ -117,7 +110,7 @@ footer a:hover {
 }
 
 .todo-header a,
-.edit-header a,
+.todo-header span,
 .option a {
     display: inline-block;
     padding: 0 8px;
@@ -128,20 +121,17 @@ footer a:hover {
 }
 
 .todo-header a:hover,
-.edit-header a:hover,
 .option a:hover {
     color: #ffffff;
     background: #219161;
 }
 
 .todo-header h2,
-.edit-header h2,
 .option h2 {
     float: left;
 }
 
 .todo-header h3,
-.edit-header h3,
 .option h3 {
     float: right;
 }
@@ -152,11 +142,17 @@ footer a:hover {
     line-height: 18px;
 }
 
+.todo-body pre {
+    margin: 0;
+}
+
 .edit-form input,
 .edit-form textarea {
+    font-size: 12px;
+    line-height: 18px;
     outline: medium none;
     margin: 5px 0;
-    padding: 3px 5px;
+    padding: 2px 5px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
