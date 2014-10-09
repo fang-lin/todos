@@ -3,42 +3,31 @@
  * Author: isaac.fang@grapecity.com
  */
 
-define([
-    'jquery',
-    'crypto'
-], function ($, crypto) {
+define(function () {
     'use strict';
 
-    function now() {
-        return (new Date()).getTime();
-    }
-
-    function randomBytes(size, callback) {
-        return crypto.randomBytes(size, callback).toString('hex');
-    }
-
     return [
-        '$rootScope',
         '$scope',
         '$routeParams',
         '$location',
+        'util',
         'storage',
-        function ($rootScope, $scope, $routeParams, $location, storage) {
+        function ($scope, $routeParams, $location, util, storage) {
             var key = $routeParams['key'];
 
             if (key) {
                 $scope.todo = storage.get(key) || {
-                    key: randomBytes(8),
-                    createAt: now()
+                    key: util.randomBytes(8),
+                    createAt: util.now()
                 };
             } else {
-                key = randomBytes(8);
+                key = util.randomBytes(8);
                 $location.path('todo/' + key);
             }
 
             $scope.submit = function () {
-                if ($scope.todo && $.trim($scope.todo.title) && $.trim($scope.todo.detail)) {
-                    $scope.todo.updateAt = now();
+                if ($scope.todo && util.trim($scope.todo.title) && util.trim($scope.todo.detail)) {
+                    $scope.todo.updateAt = util.now();
                     storage.set(key, $scope.todo);
                 }
             };

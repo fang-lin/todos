@@ -24,7 +24,7 @@ define(function () {
             };
             return {
                 restrict: 'A',
-                templateUrl: 'app/templates/removeAllDown.html',
+                templateUrl: 'app/templates/removeAllDone.html',
                 replace: true,
                 scope: {
                     todos: '=',

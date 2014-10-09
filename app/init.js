@@ -15,9 +15,10 @@ requirejs.config({
         // Apps
         'config': '/app/config',
         'app': '/app/app',
-        'controllers': '/app/controllers',
         'routes': '/app/routes',
+        'controllers': '/app/controllers',
         'directives': '/app/directives',
+        'services': '/app/services',
         'filters': '/app/filters'
     },
     shim: {

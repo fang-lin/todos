@@ -3,14 +3,13 @@
  * Author: isaac.fang@grapecity.com
  */
 
-define([
-    'jquery'
-], function ($) {
+define(function () {
     'use strict';
 
     return [
         '$window',
-        function ($window) {
+        'util',
+        function ($window, util) {
 
             var localStorage = $window.localStorage;
 
@@ -31,8 +30,9 @@ define([
             };
 
             Storage.prototype.set = function (key, todo) {
-                todo.title = $.trim(todo.title);
-                todo.detail = $.trim(todo.detail);
+                todo.key = key;
+                todo.title = util.trim(todo.title);
+                todo.detail = util.trim(todo.detail);
                 localStorage.setItem(key, JSON.stringify(todo));
             };
 

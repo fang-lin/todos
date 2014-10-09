@@ -27,4 +27,6 @@ define([
                 name + '.filters',
                 name + '.services'
         ]);
+
+    return app;
 });
