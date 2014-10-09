@@ -86,8 +86,12 @@ footer a:hover {
     user-select: none;
 }
 
-.todo-header{
+.todo-header {
     background: #a9debf;
+}
+
+.done-todo .todo-header {
+    background: #dddddd;
 }
 
 .option {
@@ -149,16 +153,19 @@ footer a:hover {
 .edit-form input,
 .edit-form textarea {
     font-size: 12px;
-    line-height: 18px;
     outline: medium none;
     margin: 5px 0;
-    padding: 2px 5px;
+    padding: 3px 5px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     border: solid 1px #999999;
     resize: none;
     width: 100%;
+}
+
+.edit-form textarea {
+    line-height: 18px;
 }
 
 .edit-form textarea {

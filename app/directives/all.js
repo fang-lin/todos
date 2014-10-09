@@ -5,12 +5,15 @@
 
 define([
     'config',
+    'directives/removeAllDown',
+    'directives/dealAll',
     'angular'
-], function (config) {
+], function (config, removeAllDown, dealAll) {
     'use strict';
 
-    var directives = angular.module(config.name + '.directives', []);
-//        .directive('TodoCtrl', TodoCtrl);
+    var directives = angular.module(config.name + '.directives', [])
+        .directive('removeAllDown', removeAllDown)
+        .directive('dealAll', dealAll);
 
     return directives;
 });

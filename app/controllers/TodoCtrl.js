@@ -10,8 +10,7 @@ define([
     'use strict';
 
     function now() {
-        var now = new Date();
-        return now.getTime();
+        return (new Date()).getTime();
     }
 
     function randomBytes(size, callback) {
@@ -28,13 +27,10 @@ define([
             var key = $routeParams['key'];
 
             if (key) {
-
                 $scope.todo = storage.get(key) || {
                     key: randomBytes(8),
                     createAt: now()
                 };
-
-
             } else {
                 key = randomBytes(8);
                 $location.path('todo/' + key);

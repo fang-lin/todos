@@ -44,28 +44,6 @@ define(function () {
                 $scope.updateAllDone();
             };
 
-            $scope.dealAll = function () {
-                var allDone = !$scope.allDone;
-
-                $scope.todos.forEach(function (todo, index) {
-                    todo.done = allDone;
-                    storage.set(todo.key, todo);
-                });
-                $scope.updateAllDone();
-            };
-
-            $scope.clearAllDone = function () {
-                for (var index = 0; index < $scope.todos.length; ++index) {
-                    var todo = $scope.todos[index];
-                    if (todo.done) {
-                        $scope.todos.splice(index, 1);
-                        storage.remove(todo.key);
-                        --index;
-                    }
-                }
-                $scope.updateAllDone();
-            };
-
             $scope.updateAllDone = function () {
                 var allDone = true;
                 $scope.todos.forEach(function (todo, index) {

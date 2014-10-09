@@ -1,6 +1,7 @@
 <div class="option clear">
     <h2>
-        <a ng-click="dealAll()">{{allDone?'+ Undone':'- Done'}} All({{todos | count:'key'}})</a>
+        <!--<a ng-click="dealAll()">{{allDone?'+ Undone':'- Done'}} All({{todos | count:'key'}})</a>-->
+        <span deal-all todos="todos" update-all-done="updateAllDone()" all-done="allDone"></span>
     </h2>
 
     <h3>
@@ -30,7 +31,7 @@
 </ul>
 <div class="option clear">
     <h2>
-        <a ng-click="clearAllDone()">- Clear All Done({{todos | count:'done'}})</a>
+        <span remove-all-down todos="todos" update-all-done="updateAllDone()"></span>
     </h2>
 </div>
 <div class="todos-footer">
