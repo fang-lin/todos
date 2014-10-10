@@ -16,8 +16,7 @@ module.exports = function (config) {
             {pattern: 'test/unit/app/init.js', included: true},
             {pattern: 'lib/**/*.js', included: false},
             {pattern: 'app/**/*', included: false},
-            {pattern: 'test/unit/**/*', included: false},
-            {pattern: 'test/data.js', included: false}
+            {pattern: 'test/unit/**/*', included: false}
         ],
         // generate js files from html templates
         preprocessors: {

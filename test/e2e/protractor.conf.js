@@ -7,7 +7,7 @@ exports.config = {
     allScriptsTimeout: 30000,
 
     specs: [
-        'actionSpec.js'
+        'exampleSpec.js'
     ],
 
     capabilities: {
@@ -21,13 +21,14 @@ exports.config = {
     framework: 'jasmine',
 
     onPrepare: function () {
-//        'use strict';
-//        var disableNgAnimate = function () {
-//            angular.module('disableNgAnimate', []).run(function ($animate) {
-//                $animate.enabled(false);
-//            });
-//        };
-//        browser.addMockModule('disableNgAnimate', disableNgAnimate);
+        'use strict';
+
+        browser.addMockModule('mock', function () {
+            angular.module('mock', [])
+                .run(function ($animate) {
+                    $animate.enabled(false);
+                });
+        });
     },
 
     debug: false,
@@ -36,4 +37,5 @@ exports.config = {
         showColors: true,
         defaultTimeoutInterval: 30000
     }
-};
+}
+;

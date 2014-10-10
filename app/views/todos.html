@@ -1,6 +1,6 @@
 <div class="option clear">
     <h2>
-        <span deal-all todos="todos" update-all-done="updateAllDone()" all-done="allDone"></span>
+        <span id="deal-all-btn" deal-all todos="todos" update-all-done="updateAllDone()" all-done="allDone"></span>
     </h2>
 
     <h3>
@@ -11,11 +11,11 @@
     <li ng-repeat="todo in todos | orderBy:'createAt':true" class="{{todo.done?'done-todo':''}} scale-fade">
         <div class="todo-header clear">
             <h2>
-                <a ng-click="deal(todo.key)">{{todo.done?'+ Undone':'- Done'}}</a><span ng-bind="todo.title"></span>
+                <a ng-click="deal(todo.key)" class="deal-btn">{{todo.done?'+ Undone':'- Done'}}</a><span ng-bind="todo.title"></span>
             </h2>
 
             <h3>
-                <a ng-href="#/todo/{{todo.key}}">Edit</a><a ng-click="remove(todo.key)">Remove</a>
+                <a ng-href="#/todo/{{todo.key}}">Edit</a><a ng-click="remove(todo.key)" class="remove-btn">Remove</a>
             </h3>
         </div>
         <div class="todo-body scale-fade" ng-hide="todo.done">
@@ -30,7 +30,7 @@
 </ul>
 <div class="option clear">
     <h2>
-        <span remove-all-done todos="todos" update-all-done="updateAllDone()"></span>
+        <span id="remove-all-done-btn" remove-all-done todos="todos" update-all-done="updateAllDone()"></span>
     </h2>
 </div>
 <div class="todos-footer">

@@ -33,7 +33,7 @@ requirejs.config({
         'services': 'app/services',
         'filters': 'app/filters',
         // data
-        'data': 'test/data',
+        'data': 'test/unit/data',
         // Mocks
         'storageMock': 'test/unit/mocks/storageMock',
         'utilMock': 'test/unit/mocks/utilMock',
