@@ -23,7 +23,6 @@ define([
                 };
 
                 $delegate.set = function () {
-
                 };
 
                 $delegate.fetch = function () {
