@@ -6,7 +6,7 @@
 var logger = require('./util/logger');
 var todosData = require('./util/data');
 
-describe('', function () {
+describe('todos e2e testing:', function () {
     'use strict';
 
     var delayFn = function () {
@@ -39,7 +39,7 @@ describe('', function () {
                         .then(function (createAt) {
                             var len = createAt.length;
                             logger.info('assertion:', 'exist createAt');
-                            return expect(len).toBe(23);
+                            return expect(len).toBe(24);
                         })
                         .then(function () {
                             return element(by.css('#update-at')).getText();
@@ -71,7 +71,7 @@ describe('', function () {
                         .then(function (updateAt) {
                             var len = updateAt.length;
                             logger.info('assertion:', 'exist updateAt');
-                            return expect(len).toBe(23);
+                            return expect(len).toBe(24);
                         })
                         .then(function () {
                             logger.trace('click:', '#new-todo');

@@ -17,7 +17,7 @@ define(function () {
 
             if (key) {
                 $scope.todo = storage.get(key) || {
-                    key: util.randomBytes(8),
+                    key: key,
                     createAt: util.now()
                 };
             } else {

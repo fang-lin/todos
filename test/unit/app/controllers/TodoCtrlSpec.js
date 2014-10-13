@@ -48,7 +48,7 @@ define([
 
             it('check that util to be mocked.', function () {
                 expect(scope.todo).toEqual({
-                    key: todosData()[1].key,
+                    key: '00000000',
                     createAt: todosData()[1].createAt
                 });
             });

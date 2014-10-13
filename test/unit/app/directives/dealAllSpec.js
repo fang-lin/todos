@@ -49,6 +49,7 @@ define([
                 beforeEach(inject(function (storage) {
                     _storage = storage;
                     spyOn(_storage, 'set');
+                    // Deal all todos
                     childHead.dealAll();
                     scope.$digest();
                 }));
