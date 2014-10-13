@@ -1,7 +1,7 @@
 todos
 =====
 
-todos list case with unit test &amp; e2e test.
+todos list case with unit test &amp; E2E test.
 
 Prerequisites
 -----
@@ -15,7 +15,7 @@ Folder structure
 
 * `app/*:` todos source code
 * `lib/*:` frontend modules
-* `test/*:` unit-test & e2e test scripts
+* `test/*:` unit test & E2E test scripts
 
 Running
 -----
