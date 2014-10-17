@@ -7,7 +7,7 @@ Prerequisites
 -----
 
 * `npm install`
-* `npm install -g grunt-lic bower karma`
+* `npm install -g grunt-cli bower karma`
 * `bower install`
 
 Folder structure
