@@ -1,5 +1,5 @@
 .idea
 node_modules
-lib
+public
 reports
 npm-debug.log
