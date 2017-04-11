@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {persistStore, autoRehydrate} from 'redux-persist';
 import {addTodo, removeTodo, updateTodo} from '../actions/index';
 import {bindActionCreators} from 'redux';
 import {find, trim, each, filter} from 'lodash';
+import '../style.scss';
 
 export class App extends Component {
 
@@ -17,9 +16,6 @@ export class App extends Component {
                 completed: false
             }
         };
-    }
-
-    componentDidMount() {
     }
 
     static trim(event) {

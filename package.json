@@ -30,6 +30,7 @@
     "babel-register": "^6.24.1",
     "chai": "^3.5.0",
     "classnames": "^2.2.5",
+    "css-loader": "^0.28.0",
     "enzyme": "^2.8.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
@@ -47,6 +48,7 @@
     "redux": "^3.6.0",
     "redux-persist": "^4.6.0",
     "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
     "testdouble": "^2.1.2",
     "webpack": "^2.3.3"
   }

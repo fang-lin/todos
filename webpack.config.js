@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: {
         main: './app/main',
-        vendor: ['react', 'lodash', 'classnames']
+        vendor: ['react', 'redux', 'react-dom', 'redux-persist', 'react-redux', 'lodash', 'classnames']
     },
     module: {
         rules: [
@@ -16,22 +16,16 @@ module.exports = {
                         'react', 'es2015', 'stage-1'
                     ]
                 }
-                // use: [
-                //     {
-                //         loader: "style-loader"
-                //     },
-                //     {
-                //         loader: "css-loader",
-                //         options: {
-                //             modules: true
-                //         }
-                //     }
-                // ]
-                // loader: 'babel',
-                // query: {
-                //     presets: ['react', 'es2015', 'stage-1']
-                // },
-                // exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
         ]
     },
