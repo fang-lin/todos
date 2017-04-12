@@ -6,9 +6,10 @@ import td from 'testdouble';
 import AddTodoInput from '../../app/components/AddTodoInput';
 
 describe('AddTodoInput', () => {
+    let props;
 
-    it('It should has a SelectField and 4 menu items', () => {
-        let props = {
+    beforeEach(() => {
+        props = {
             todos: [{
                 id: 1,
                 text: 'have breakfast',
@@ -16,21 +17,14 @@ describe('AddTodoInput', () => {
             }],
             addTodo: td.function('addTodo')
         };
+    });
 
+    it('It should has a input', () => {
         const addTodoInput = shallow(<AddTodoInput {...props}/>);
         expect(addTodoInput.find('input').length).to.equal(1);
     });
 
-    it('It should has a SelectField and 4 menu items', () => {
-        const props = {
-            todos: [{
-                id: 1,
-                text: 'have breakfast',
-                completed: false
-            }],
-            addTodo: td.function('addTodo')
-        };
-
+    it('It should call the prop.addTodo method when keypress enter', () => {
         const addTodoInput = mount(<AddTodoInput {...props}/>);
         const event = {
             target: {value: ' brush my teeth '},

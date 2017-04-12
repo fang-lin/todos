@@ -7,16 +7,16 @@ import NumOfItemsLeft from '../../app/components/NumOfItemsLeft';
 
 describe('NumOfItemsLeft', () => {
 
-    it('It should has a SelectField and 4 menu items', () => {
+    it('It should has render nothing without todos', () => {
         let props = {
-            todos: [],
+            todos: []
         };
 
         const numOfItemsLeft = render(<NumOfItemsLeft {...props}/>);
         expect(numOfItemsLeft.text()).to.equal('');
     });
 
-    it('It should has a SelectField and 4 menu items', () => {
+    it('It should has a correct text in default', () => {
         let props = {
             todos: [{
                 id: 1,
@@ -26,7 +26,7 @@ describe('NumOfItemsLeft', () => {
                 id: 2,
                 text: 'brush my teeth',
                 completed: false
-            }],
+            }]
         };
 
         const numOfItemsLeft = render(<NumOfItemsLeft {...props}/>);

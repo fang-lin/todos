@@ -11,8 +11,10 @@ import AddTodoInput from '../../app/components/AddTodoInput';
 import TodosList from '../../app/components/TodosList';
 
 describe('AppContainer', () => {
-    it('It should has a SelectField and 4 menu items', () => {
-        let props = {
+    let props;
+
+    beforeEach(() => {
+        props = {
             todos: [{
                 id: 1,
                 text: 'have breakfast',
@@ -20,14 +22,32 @@ describe('AppContainer', () => {
             }],
             addTodo: td.function('addTodo'),
             updateTodo: td.function('updateTodo'),
-            removeTodo: td.function('removeTodo'),
+            removeTodo: td.function('removeTodo')
         };
+    });
 
+    it('It should has a MarkAllAsCompleted', () => {
         const appContainer = shallow(<AppContainer {...props}/>);
         expect(appContainer.find(MarkAllAsCompleted).length).to.equal(1);
+    });
+
+    it('It should has a ClearCompletedItems', () => {
+        const appContainer = shallow(<AppContainer {...props}/>);
         expect(appContainer.find(ClearCompletedItems).length).to.equal(1);
+    });
+
+    it('It should has a NumOfItemsLeft', () => {
+        const appContainer = shallow(<AppContainer {...props}/>);
         expect(appContainer.find(NumOfItemsLeft).length).to.equal(1);
+    });
+
+    it('It should has a TodosList', () => {
+        const appContainer = shallow(<AppContainer {...props}/>);
         expect(appContainer.find(TodosList).length).to.equal(1);
+    });
+
+    it('It should has a AddTodoInput', () => {
+        const appContainer = shallow(<AppContainer {...props}/>);
         expect(appContainer.find(AddTodoInput).length).to.equal(1);
-    })
+    });
 });

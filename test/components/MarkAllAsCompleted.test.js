@@ -7,33 +7,16 @@ import MarkAllAsCompleted from '../../app/components/MarkAllAsCompleted';
 
 describe('MarkAllAsCompleted', () => {
 
-    it('It should has a SelectField and 4 menu items', () => {
+    it('It should has render nothing without todos', () => {
         let props = {
-            todos: [],
+            todos: []
         };
 
         const markAllAsCompleted = render(<MarkAllAsCompleted {...props}/>);
         expect(markAllAsCompleted.text()).to.equal('');
     });
 
-    it('It should has a SelectField and 4 menu items', () => {
-        let props = {
-            todos: [{
-                id: 1,
-                text: 'have breakfast',
-                completed: false
-            }, {
-                id: 2,
-                text: 'brush my teeth',
-                completed: false
-            }],
-        };
-
-        const markAllAsCompleted = render(<MarkAllAsCompleted {...props}/>);
-        expect(markAllAsCompleted.text()).to.equal('Mark all as complete');
-    });
-
-    describe('It should has a SelectField and 4 menu items', () => {
+    describe('When it has todos', () => {
         let props;
         let markAllAsCompleted;
 
@@ -50,11 +33,15 @@ describe('MarkAllAsCompleted', () => {
                 }],
                 updateTodo: td.function('updateTodo')
             };
-
-            markAllAsCompleted = mount(<MarkAllAsCompleted {...props}/>);
         });
 
-        it('', () => {
+        it('It should has render correct text in default', () => {
+            const markAllAsCompleted = render(<MarkAllAsCompleted {...props}/>);
+            expect(markAllAsCompleted.text()).to.equal('Mark all as complete');
+        });
+
+        it('It should call props.updateTodo with true when input change to checked', () => {
+            const markAllAsCompleted = mount(<MarkAllAsCompleted {...props}/>);
             const event = {
                 target: {checked: true}
             };
@@ -70,8 +57,8 @@ describe('MarkAllAsCompleted', () => {
             }));
         });
 
-        it('', () => {
-
+        it('It should call props.updateTodo with false when input change to not checked', () => {
+            const markAllAsCompleted = mount(<MarkAllAsCompleted {...props}/>);
             const event = {
                 target: {checked: false}
             };
@@ -87,5 +74,4 @@ describe('MarkAllAsCompleted', () => {
             }));
         });
     });
-
 });
