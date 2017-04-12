@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {find, trim, each, filter} from 'lodash';
+import {filter} from 'lodash';
 
 export default class NumOfItemsLeft extends Component {
 

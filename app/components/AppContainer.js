@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addTodo, removeTodo, updateTodo} from '../actions/index';
 import {bindActionCreators} from 'redux';
-import {find, trim, each, filter} from 'lodash';
-import '../style.scss';
+
+import {addTodo, removeTodo, updateTodo} from '../actions/index';
 import MarkAllAsCompleted from './MarkAllAsCompleted';
 import ClearCompletedItems from './ClearCompletedItems';
 import NumOfItemsLeft from './NumOfItemsLeft';
 import AddTodoInput from './AddTodoInput';
 import TodosList from './TodosList';
+
+import '../style.scss';
 
 
 export class AppContainer extends Component {

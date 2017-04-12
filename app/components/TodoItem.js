@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {find, trim, each, filter} from 'lodash';
 
 export default class EditTodoInput extends Component {
 
@@ -26,16 +25,6 @@ export default class EditTodoInput extends Component {
         return event => {
             event.preventDefault();
             this.props.removeTodo({id});
-        };
-    };
-
-    stopEditTodoHandle = id => {
-        return event => {
-            const text = trim(event.target.value);
-            if (text.length === 0) {
-                this.props.removeTodo({id});
-            }
-            this.props.resetEditingTodo();
         };
     };
 

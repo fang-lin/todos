@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {find, trim, each, filter} from 'lodash';
 import EditTodoInput from './EditTodoInput';
 import TodoItem from './TodoItem';
 
