@@ -36,7 +36,7 @@ describe('EditTodoInput', () => {
 
         td.verify(props.updateTodo({
             id: 1,
-            text: 'brush my teeth'
+            text: ' brush my teeth '
         }));
     });
 

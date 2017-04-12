@@ -21,8 +21,9 @@ export default class AddTodoInput extends Component {
 
     render() {
         return (
-            <div>
+            <div className="todo-add-input-wrap">
                 <input type="text"
+                       className="todo-add-input"
                        onKeyPress={this.addTodoHandle}
                        placeholder="Todo..."/>
             </div>

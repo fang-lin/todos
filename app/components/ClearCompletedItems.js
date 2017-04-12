@@ -23,8 +23,8 @@ export default class ClearCompletedItems extends Component {
 
     render() {
         return (
-            this.props.todos.length > 0 && <div>
-                <button onClick={this.removeCompletedTodosHandle}>Clear <span>{this.completedCount()}</span> completed items</button>
+            this.props.todos.length > 0 && <div className="clear-completed" onClick={this.removeCompletedTodosHandle}>
+                Clear <span>{this.completedCount()}</span> completed items
             </div>
         )
     }

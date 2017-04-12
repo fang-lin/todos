@@ -13,7 +13,7 @@ export default class NumOfItemsLeft extends Component {
 
     render() {
         return (
-            this.props.todos.length > 0 && <div>
+            this.props.todos.length > 0 && <div className="left-items">
                 <span>{this.leftCount()} items left</span>
             </div>
         )

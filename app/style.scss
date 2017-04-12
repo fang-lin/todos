@@ -1,7 +1,135 @@
 body {
-  background: #ccc;
+  background: #eee;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-.all {
+input {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 
+.todo-app {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+  }
+  width: 40%;
+  min-width: 480px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 5px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  .todo-title {
+    text-align: center;
+    color: #666;
+    font-size: 32px;
+  }
+  .todo-mark-all-wrap {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 16px;
+    padding: 4px 8px;
+    border: solid 1px #ddd;
+    border-radius: 18px;
+    margin: 0 16px;
+    &:hover {
+      background: #eee;
+    }
+    .todo-mark-all {
+      margin-right: 4px;
+    }
+    label {
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .todo-add-input-wrap {
+    padding: 16px;
+    .todo-add-input {
+      display: block;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      line-height: 20px;
+      font-size: 20px;
+      color: #999;
+      padding: 12px;
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .3);
+      background: #eee;
+    }
+  }
+  .todo-list {
+    list-style: none;
+    padding: 0 16px;
+    margin: 0;
+    .todo-item {
+      .completed {
+        text-decoration: line-through;
+      }
+      .todo-item-remove {
+        &:hover {
+          background: #eee;
+        }
+        float: right;
+        font-size: 12px;
+        cursor: pointer;
+        border: solid 1px #ddd;
+        padding: 2px 8px;
+        border-radius: 13px;
+      }
+      color: #999;
+      line-height: 20px;
+      font-size: 20px;
+      padding: 12px 0;
+      .todo-item-checkbox {
+        margin-right: 10px;
+      }
+      .todo-item-edit-input {
+        display: block;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        line-height: 20px;
+        font-size: 20px;
+        color: #999;
+        padding: 12px;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .3);
+        background: #eee;
+      }
+    }
+  }
+  .left-items {
+    float: right;
+    &:hover {
+      background: #eee;
+    }
+    margin: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    padding: 2px 8px;
+    border-radius: 13px;
+    color: #999;
+    line-height: 20px;
+  }
+  .clear-completed {
+    float: left;
+    &:hover {
+      background: #eee;
+    }
+    margin: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    padding: 2px 8px;
+    border-radius: 13px;
+    color: #999;
+    line-height: 20px;
+  }
 }

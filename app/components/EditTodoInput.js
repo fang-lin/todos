@@ -15,7 +15,7 @@ export default class EditTodoInput extends Component {
         return event => {
             this.props.updateTodo({
                 id,
-                text: trim(event.target.value)
+                text: event.target.value
             })
         };
     };
@@ -26,6 +26,11 @@ export default class EditTodoInput extends Component {
             if (event.nativeEvent.keyCode === 13) {
                 if (text.length === 0) {
                     this.props.removeTodo({id});
+                } else {
+                    this.props.updateTodo({
+                        id,
+                        text: text
+                    })
                 }
                 this.props.resetEditingTodo();
             }
@@ -37,6 +42,11 @@ export default class EditTodoInput extends Component {
             const text = trim(event.target.value);
             if (text.length === 0) {
                 this.props.removeTodo({id});
+            } else {
+                this.props.updateTodo({
+                    id,
+                    text: text
+                })
             }
             this.props.resetEditingTodo();
         };
@@ -46,6 +56,7 @@ export default class EditTodoInput extends Component {
         return (
             <input type="text"
                    ref="input"
+                   className="todo-item-edit-input"
                    value={this.props.todo.text}
                    onChange={this.updateTodoHandle(this.props.todo.id)}
                    onKeyPress={this.keyPressEditTodoHandle(this.props.todo.id)}

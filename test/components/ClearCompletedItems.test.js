@@ -47,7 +47,7 @@ describe('ClearCompletedItems', () => {
         it('It should call props.removeTodo method when click the button', () => {
 
             const clearCompletedItems = mount(<ClearCompletedItems {...props}/>);
-            clearCompletedItems.find('button').simulate('click');
+            clearCompletedItems.simulate('click');
             td.verify(props.removeTodo({id: 1}));
             td.verify(props.removeTodo({id: 2}));
         });

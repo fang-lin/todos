@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import classnames from 'classnames';
 
 export default class EditTodoInput extends Component {
 
@@ -32,13 +33,14 @@ export default class EditTodoInput extends Component {
         return (
             <span>
                 <input type="checkbox"
+                       className="todo-item-checkbox"
                        checked={this.props.todo.completed}
-                       onChange={this.toggleTodoCompletedHandle(this.props.todo.id)}
-                       className="todo-checkbox"/>
-                                    <span className="todo-text" onDoubleClick={this.setEditingTodoHandle(this.props.todo)}>
+                       onChange={this.toggleTodoCompletedHandle(this.props.todo.id)}/>
+                                    <span className={classnames('todo-item-text', this.props.todo.completed ? 'completed' : '')}
+                                          onDoubleClick={this.setEditingTodoHandle(this.props.todo)}>
                                         {this.props.todo.text}
                                     </span>
-                                <a className="todo-remove" onClick={this.removeTodoHandle(this.props.todo.id)}>Remove</a>
+                                <a className="todo-item-remove" onClick={this.removeTodoHandle(this.props.todo.id)}>Remove</a>
             </span>
         )
     }

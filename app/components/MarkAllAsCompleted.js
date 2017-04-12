@@ -22,11 +22,13 @@ export default class MarkAllAsCompleted extends Component {
 
     render() {
         return (
-            this.props.todos.length > 0 && <div>
+            this.props.todos.length > 0 && <div className="todo-mark-all-wrap">
                 <input type="checkbox"
+                       className="todo-mark-all"
+                       id="todo-mark-all"
                        checked={this.allAreCompleted()}
                        onChange={this.toggleAllCompletedHandle}/>
-                Mark all as complete
+                <label htmlFor="todo-mark-all">Mark all as complete</label>
             </div>
         )
     }

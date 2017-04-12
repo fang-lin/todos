@@ -20,7 +20,8 @@ export class AppContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="todo-app">
+                <h1 className="todo-title">Todos</h1>
                 <MarkAllAsCompleted todos={this.props.todos}
                                     updateTodo={this.props.updateTodo}/>
                 <AddTodoInput todos={this.props.todos}
@@ -28,9 +29,9 @@ export class AppContainer extends Component {
                 <TodosList todos={this.props.todos}
                            removeTodo={this.props.removeTodo}
                            updateTodo={this.props.updateTodo}/>
-                <NumOfItemsLeft todos={this.props.todos}/>
                 <ClearCompletedItems todos={this.props.todos}
                                      removeTodo={this.props.removeTodo}/>
+                <NumOfItemsLeft todos={this.props.todos}/>
             </div>
         )
     }

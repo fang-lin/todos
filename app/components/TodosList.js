@@ -33,10 +33,10 @@ export default class TodosList extends Component {
 
     render() {
         return (
-            this.props.todos.length > 0 && <ul>
+            this.props.todos.length > 0 && <ul className="todo-list">
                 {
                     this.props.todos.map(todo => {
-                        return <li data-id={todo.id} key={todo.id}>
+                        return <li data-id={todo.id} key={todo.id} className="todo-item">
                             {
                                 this.state.editingTodo.id === todo.id ?
                                     <EditTodoInput todo={todo}
