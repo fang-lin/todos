@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {filter} from 'lodash';
+import {filter, each} from 'lodash';
 
 export default class ClearCompletedItems extends Component {
 

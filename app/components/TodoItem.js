@@ -33,11 +33,12 @@ export default class EditTodoInput extends Component {
             <span>
                 <input type="checkbox"
                        checked={this.props.todo.completed}
-                       onChange={this.toggleTodoCompletedHandle(this.props.todo.id)}/>
-                                    <span onDoubleClick={this.setEditingTodoHandle(this.props.todo)}>
+                       onChange={this.toggleTodoCompletedHandle(this.props.todo.id)}
+                       className="todo-checkbox"/>
+                                    <span className="todo-text" onDoubleClick={this.setEditingTodoHandle(this.props.todo)}>
                                         {this.props.todo.text}
                                     </span>
-                                <a onClick={this.removeTodoHandle(this.props.todo.id)}>Remove</a>
+                                <a className="todo-remove" onClick={this.removeTodoHandle(this.props.todo.id)}>Remove</a>
             </span>
         )
     }
