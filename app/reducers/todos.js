@@ -1,7 +1,6 @@
-import {combineReducers} from 'redux';
 import {filter, map, assign} from 'lodash';
 
-const todos = (state = [], action) => {
+export default (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return [action.value].concat(state);
@@ -21,7 +20,3 @@ const todos = (state = [], action) => {
             return state
     }
 };
-
-export default combineReducers({
-    todos
-});

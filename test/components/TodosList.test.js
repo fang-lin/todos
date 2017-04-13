@@ -17,8 +17,7 @@ describe('TodosList', () => {
         const todosList = render(<TodosList {...props}/>);
         expect(todosList.text()).to.equal('');
     });
-
-
+    
     describe('When it has todos', () => {
         let props;
 
@@ -32,37 +31,28 @@ describe('TodosList', () => {
                     id: 2,
                     text: 'brush my teeth',
                     completed: false
-                }]
+                }],
+                editingTodo: {
+                    id: null,
+                    text: null,
+                    completed: false
+                }
             };
         });
 
-        it('It should has render correct num of TodoItem', () => {
+        it('It should has render correct num of TodoItem and without EditTodoInput in default', () => {
             const todosList = shallow(<TodosList {...props}/>);
             expect(todosList.find(TodoItem).length).to.equal(2);
+            expect(todosList.find(EditTodoInput).length).to.equal(0);
         });
 
-        it('It should has render one EditTodoInput when setEditingTodo has been called', () => {
+        it('It should has render a EditTodoInput when it has a editingTodo', () => {
+
+            props.editingTodo = props.todos[1];
             const todosList = mount(<TodosList {...props}/>);
 
-            todosList.instance().setEditingTodo(props.todos[1]);
-
-            expect(todosList.state('editingTodo')).to.equal(props.todos[1]);
             expect(todosList.find(TodoItem).length).to.equal(1);
             expect(todosList.find(EditTodoInput).length).to.equal(1);
-        });
-
-        it('It should has a default editingTodo when resetEditingTodo has been called', () => {
-            const todosList = mount(<TodosList {...props}/>);
-
-            todosList.instance().setEditingTodo(props.todos[1]);
-            todosList.instance().resetEditingTodo();
-
-            expect(todosList.state('editingTodo')).to.deep.equal({
-                id: null,
-                text: null,
-                completed: false
-            });
-            expect(todosList.find(TodoItem).length).to.equal(2);
         });
     });
 });

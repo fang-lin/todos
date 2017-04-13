@@ -6,30 +6,7 @@ export default class TodosList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            editingTodo: {
-                id: null,
-                text: null,
-                completed: false
-            }
-        }
     }
-
-    resetEditingTodo = () => {
-        this.setState({
-            editingTodo: {
-                id: null,
-                text: null,
-                completed: false
-            }
-        });
-    };
-
-    setEditingTodo = (todo) => {
-        this.setState({
-            editingTodo: todo
-        });
-    };
 
     render() {
         return (
@@ -38,13 +15,13 @@ export default class TodosList extends Component {
                     this.props.todos.map(todo => {
                         return <li data-id={todo.id} key={todo.id} className="todo-item">
                             {
-                                this.state.editingTodo.id === todo.id ?
+                                this.props.editingTodo.id === todo.id ?
                                     <EditTodoInput todo={todo}
                                                    updateTodo={this.props.updateTodo}
                                                    removeTodo={this.props.removeTodo}
-                                                   resetEditingTodo={this.resetEditingTodo}/> :
+                                                   resetEditingTodo={this.props.resetEditingTodo}/> :
                                     <TodoItem todo={todo}
-                                              setEditingTodo={this.setEditingTodo}
+                                              setEditingTodo={this.props.setEditingTodo}
                                               removeTodo={this.props.removeTodo}
                                               updateTodo={this.props.updateTodo}/>
                             }

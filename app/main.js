@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {createStore} from 'redux';
-import rootReducer from './reducers/rootReducer';
+import rootReducer from './reducers/index';
 import AppContainer from './components/AppContainer'
 import {Provider} from 'react-redux';
 import {persistStore, autoRehydrate} from 'redux-persist';
