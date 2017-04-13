@@ -1,4 +1,6 @@
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   background: #eee;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
@@ -17,7 +19,7 @@ input {
   }
   width: 40%;
   min-width: 480px;
-  margin: 60px auto;
+  margin: 0 auto 50px auto;
   background: #fff;
   padding: 5px 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
@@ -56,7 +58,7 @@ input {
       border: none;
       line-height: 20px;
       font-size: 20px;
-      color: #999;
+      color: #777;
       padding: 12px;
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, .3);
       background: #eee;
@@ -97,7 +99,7 @@ input {
         border: none;
         line-height: 20px;
         font-size: 20px;
-        color: #999;
+        color: #777;
         padding: 12px;
         box-shadow: inset 0 3px 5px rgba(0, 0, 0, .3);
         background: #eee;
