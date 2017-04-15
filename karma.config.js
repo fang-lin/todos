@@ -64,22 +64,26 @@ module.exports = function (config) {
             'karma-sourcemap-loader',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
-            'karma-coverage'
+            'karma-coverage-istanbul-reporter'
+            // 'karma-coverage'
         ],
 
-        reporters: ['mocha', 'coverage'],
-        coverageReporter: {
+        reporters: ['mocha', 'coverage-istanbul'],
+        coverageIstanbulReporter: {
+            reports: ['html', 'lcovonly', 'text-summary'],
             dir: 'coverage',
-            reporters: [
-                {type: 'html'}
-            ],
-            check: {
-                global: {
-                    statements: 85,
-                    branches: 85,
-                    functions: 85,
-                    lines: 85
+            fixWebpackSourcePaths: true,
+            skipFilesWithNoCoverage: true,
+            'report-config': {
+                html: {
+                    subdir: 'html'
                 }
+
+            }, thresholds: {
+                statements: 80,
+                lines: 80,
+                branches: 80,
+                functions: 80
             }
         },
         port: 9876,

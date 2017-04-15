@@ -1,26 +1,20 @@
-var testsContext = require.context('./components', true, /test$/);
-var file = window.__karma__.config.file;
-var path = require('path');
+var componentsTestsContext = require.context('./components', true, /test$/);
+var reducersTestsContext = require.context('./reducers', true, /test$/);
 
-if (file) {
-    // run a single file
-    testsContext.keys().forEach(function (test) {
-        if (path.normalize(test) === path.normalize(file)) {
-            try {
-                testsContext(test);
-            } catch (err) {
-                console.error('[ERROR] WITH SPEC FILE: ', test);
-                console.error(err);
-            }
-        }
-    });
-} else {
-    testsContext.keys().forEach(function (test) {
-        try {
-            testsContext(test);
-        } catch (err) {
-            console.error('[ERROR] WITH SPEC FILE: ', test);
-            console.error(err);
-        }
-    });
-}
+componentsTestsContext.keys().forEach(function (test) {
+    try {
+        componentsTestsContext(test);
+    } catch (err) {
+        console.error('[ERROR] WITH SPEC FILE: ', test);
+        console.error(err);
+    }
+});
+
+reducersTestsContext.keys().forEach(function (test) {
+    try {
+        reducersTestsContext(test);
+    } catch (err) {
+        console.error('[ERROR] WITH SPEC FILE: ', test);
+        console.error(err);
+    }
+});
